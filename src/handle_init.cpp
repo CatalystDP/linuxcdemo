@@ -15,6 +15,5 @@ void allocCallback(uv_handle_t* handle,size_t suggestedSize,uv_buf_t* buf){
 }
 void handleInit(){
     uv_tty_init(&mainLoop,&tty,0,1);
-    printSelection();
     uv_read_start((uv_stream_t*)&tty, allocCallback,ttyHandler);
 }
